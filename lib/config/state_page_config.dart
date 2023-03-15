@@ -13,12 +13,12 @@ class StatePageConfig extends StatefulWidget {
 class _StatePageConfigState extends State<StatePageConfig> {
   int _currentIndex = 0;
 
-  Widget _currentPage() {
+  List<Widget> _currentPage() {
     return [
       const HomeScreen(),
       const FriendScreem(),
       const ProfileScreen(),
-    ][_currentIndex];
+    ];
   }
 
   @override
@@ -28,7 +28,10 @@ class _StatePageConfigState extends State<StatePageConfig> {
         title: const Text('Personal'),
         centerTitle: true,
       ),
-      body: _currentPage(),
+      body: IndexedStack(
+        index: _currentIndex,
+        children: _currentPage(),
+      ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (value) {
           setState(() {
