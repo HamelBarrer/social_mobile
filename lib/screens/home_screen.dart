@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:social_mobile/screens/friend_screen.dart';
+import 'package:social_mobile/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +12,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Center(
+      child: Text('Home'),
+    );
   }
 }
